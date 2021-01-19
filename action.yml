@@ -17,14 +17,7 @@ runs:
       with:
         python-version: 3.9  
 
-    - run: |
-        echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: ${{ github.action_path }}/goodbye.sh
-      shell: bash
+    - run: $|
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           trufflehog3 --no-history --branch ${GITHUB_REF#refs/heads/} -r rules.yaml -f yaml --line-numbers GITHUB_WORKSPACE | yaml2junit.py
