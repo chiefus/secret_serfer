@@ -1,0 +1,4 @@
+sys
+jinja2
+pyyaml
+truffleHog3

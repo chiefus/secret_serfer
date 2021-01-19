@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+<testsuites>
+  <testsuite errors="0" failures="4" tests="4" time="0">
+    
+    
+    
+    
+    
+    <testcase name="ansible/bastion_packages/tasks/main.yml">
+      <failure file="ansible/vars/variables" line="4" message="[High entropy] token2: ****************************************" type="Trufflehog 3">[High entropy] token2: ****************************************</failure>
+    </testcase>
+    
+    
+    
+    
+    
+    <testcase name="ansible/bastion_packages/tasks/main.yml">
+      <failure file="ansible/vars/variables" line="3" message="[Amazon AWS Access Key ID] token1: ********************" type="Trufflehog 3">[Amazon AWS Access Key ID] token1: ********************</failure>
+    </testcase>
+    
+    
+    
+    
+    
+    <testcase name="ansible/bastion_packages/tasks/main.yml">
+      <failure file="ansible/vars/variables" line="3" message="[AWS API Key] token1: ********************" type="Trufflehog 3">[AWS API Key] token1: ********************</failure>
+    </testcase>
+    
+    
+    
+    
+    
+    <testcase name="ansible/bastion_packages/tasks/main.yml">
+      <failure file="ansible/vars/variables" line="5" message="[Slack Token2] My *****" type="Trufflehog 3">[Slack Token2] My *****</failure>
+    </testcase>
+    
+  </testsuite>
+</testsuites>  

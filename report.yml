@@ -1,0 +1,32 @@
+- branch: null
+  commit: null
+  commitHash: null
+  date: '2021-01-19 11:28:02'
+  path: ansible/vars/variables
+  reason: High entropy
+  stringsFound:
+  - '4 token2: wJalrXUtnFEMI/K7MDENG/bPxRfiCYKMDNHKROOI'
+- branch: null
+  commit: null
+  commitHash: null
+  date: '2021-01-19 11:28:02'
+  path: ansible/vars/variables
+  reason: Amazon AWS Access Key ID
+  stringsFound:
+  - '3 token1: AKIAIOSFODNN7OKEMLPE'
+- branch: null
+  commit: null
+  commitHash: null
+  date: '2021-01-19 11:28:02'
+  path: ansible/vars/variables
+  reason: AWS API Key
+  stringsFound:
+  - '3 token1: AKIAIOSFODNN7OKEMLPE'
+- branch: null
+  commit: null
+  commitHash: null
+  date: '2021-01-19 11:28:02'
+  path: ansible/vars/variables
+  reason: Slack Token2
+  stringsFound:
+  - '5 My Slack xoxb token: xoxb-95893489302-Q8y7LxabFU12PAya3WSMxxv3'
