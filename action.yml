@@ -1,4 +1,5 @@
 name: 'Secret Serfer'
+author: Andrey Shelkov
 description: 'Looking for Secrets in current commit. It can create a report in JUnit Format.'
 inputs:
   args:
@@ -11,9 +12,8 @@ inputs:
         -v, --verbose      enable verbose logging {-v, -vv, -vvv}
         -o, --output       write report to file
         --no-entropy       disable entropy checks
-        --no-history       disable commit history check
 
-    required: true
+    required: false
   targets:
     description: |
       Paths to git repository files 

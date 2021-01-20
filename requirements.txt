@@ -1,3 +1,3 @@
-jinja2
-pyyaml
-truffleHog3
+jinja2==2.11.1
+pyyaml==5.3.1
+truffleHog3==2.0.3

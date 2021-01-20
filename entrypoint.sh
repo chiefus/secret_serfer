@@ -3,7 +3,7 @@
 set -o pipefail
 if [ -z "$REPORT" ]
 then
-      trufflehog3  -r /rules.yaml -f yaml $@ ${TARGETS}
+      trufflehog3 --no-history -r /rules.yml -f yaml $@ ${TARGETS}
 else
-      trufflehog3 --line-number -r /rules.yaml -f yaml $@ ${TARGETS} | /yaml2junit.py
+      trufflehog3 --line-number --no-history -r /rules.yml -f yaml $@ ${TARGETS} | /yaml2junit.py
 fi
