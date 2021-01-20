@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -o pipefail
 if [ -z "$REPORT" ]
 then
       trufflehog3  -r /rules.yaml -f yaml $@ ${TARGETS}
