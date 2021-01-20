@@ -5,5 +5,5 @@ if [ -z "$REPORT" ]
 then
       trufflehog3  -r /rules.yaml -f yaml $@ ${TARGETS}
 else
-      trufflehog3  -r /rules.yaml -f yaml $@ ${TARGETS} | /yaml2junit.py
+      trufflehog3 --line-number -r /rules.yaml -f yaml $@ ${TARGETS} | /yaml2junit.py
 fi

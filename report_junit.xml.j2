@@ -1,10 +1,11 @@
 <?xml version='1.0'?>
 <testsuites>
   <testsuite errors="0" failures="{{ data|length }}" tests="{{ data|length }}" time="0">
+    {% set hidden_secret = ' **********' %}
     {% for test in data %}
     {% set line = test.stringsFound[0].split(' ',1)[0] %}
     {% set raw_message = test.stringsFound[0].split(" ",1)[1].split(" ",-1) %}
-    {% set message = raw_message[0] + ' ' + raw_message[1]|length*'*' %}
+    {% set message = raw_message[0] + hidden_secret %}
     {% set reason = test.reason %}
     <testcase name="ansible/bastion_packages/tasks/main.yml">
       <failure file="{{ test.path }}" line="{{ line }}" message="[{{ reason }}] {{ message }}" type="Trufflehog 3">[{{ reason }}] {{ message }}</failure>
