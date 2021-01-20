@@ -1,3 +1,8 @@
 #!/bin/bash
 
-trufflehog3 --no-history -r /rules.yaml -f yaml /github/workspace | /yaml2junit.py
+if [ -z "$REPORT" ]
+then
+      trufflehog3  -r /rules.yaml -f yaml $@ ${TARGETS}
+else
+      trufflehog3  -r /rules.yaml -f yaml $@ ${TARGETS} | /yaml2junit.py
+fi

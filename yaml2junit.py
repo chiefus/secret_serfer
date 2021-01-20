@@ -3,8 +3,11 @@
 import sys
 import yaml
 import jinja2
+import os
+
 
 def main():
+  report_file_name = os.environ['REPORT']
   input_data = sys.stdin.read()
 
   yaml_report = yaml.safe_load(input_data)
@@ -14,7 +17,7 @@ def main():
   TEMPLATE_FILE = "report_junit.xml.j2"
   template = templateEnv.get_template(TEMPLATE_FILE)
   outputText = template.render(data=yaml_report)
-  f = open("/github/workspace/report_junit.xml", "w")
+  f = open("/github/workspace/" + report_file_name, "w")
   f.write(outputText)
   f.close()
 
