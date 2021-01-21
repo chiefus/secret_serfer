@@ -14,6 +14,7 @@ inputs:
         --no-entropy       disable entropy checks
 
     required: false
+    
   targets:
     description: |
       Paths to git repository files 
