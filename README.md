@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Secret Demo
-        uses: chiefus/secret_serfer@v0.0.5
+        uses: chiefus/secret_serfer@v0.0.6
         with:
           targets: "./"
 ```
@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Secret Demo
-        uses: chiefus/secret_serfer@v0.0.5
+        uses: chiefus/secret_serfer@v0.0.6
         with:
           targets: "./"
           report: report.xml
