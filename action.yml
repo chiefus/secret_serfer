@@ -21,10 +21,23 @@ inputs:
       which should be scanned by trufflehog3
     required: true
 
+  exclude_rules:
+    description: |
+      List of rules which shouldn't be used during scan.
+      Be careful with it.
+    required: false    
+
   report:
     description: |
       Name of JUnit test results file
     required: false
+  
+  suppress_output:
+    description: |
+      If you desire to conseal results of trufflehog3 work you can suppress.
+      This parameter doesn't work if report value was declared. 
+    required: false
+    default: false
 
 runs:
   using: "docker"
@@ -35,5 +48,5 @@ runs:
   env:
     TARGETS: ${{ inputs.targets }}
     REPORT: ${{ inputs.report }}
-          
-          
+    EXCLUDE_RULES: ${{ inputs.exclude_rules }}
+    SUPPRESS_OUTPUT: ${{ inputs.suppress_output }}
