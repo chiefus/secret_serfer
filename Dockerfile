@@ -1,6 +1,6 @@
-FROM python:3.9-slim
+FROM python:3.9-alpine
 
-RUN set -ex && apt-get update && apt-get -q install -y -V git && rm -rf /var/lib/apt/lists/*
+RUN set -ex && apk add --no-cache git bash
 COPY . ./
 RUN pip install -r requirements.txt
 

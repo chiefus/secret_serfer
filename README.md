@@ -7,7 +7,7 @@ This solution is based on usage truffleHog3 with custom rule files (rules.yml).
 
 ## How to use
 
-### Example 1
+### Example 1: Current directory
 
 ```
 jobs:
@@ -18,13 +18,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Secret Demo
-        uses: chiefus/secret_serfer@v0.0.6
+        uses: chiefus/secret_serfer@v0.1.0
         with:
           targets: "./"
 ```
 
 
-### Example 2 (with test results publishing and uploading)
+### Example 2: With test results publishing and uploading
 ```
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Secret Demo
-        uses: chiefus/secret_serfer@v0.0.6
+        uses: chiefus/secret_serfer@v0.1.0
         with:
           targets: "./"
           report: report.xml
@@ -55,4 +55,62 @@ jobs:
           check_name: Unit Test Results
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: report.xml
+```
+
+### Example 3: Exclude entropy
+```
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+          
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Secret Demo
+        uses: chiefus/secret_serfer@v0.1.0
+        with:
+          targets: "./"
+          args: "--no-entropy"
+```
+
+
+### Example 4: Exclude some regexp rules
+(List of used rules is in file rules.yml.)
+```
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+          
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Secret Demo
+        uses: chiefus/secret_serfer@v0.1.0
+        with:
+          targets: "./code"
+          args: "--no-entropy"
+          exclude_rules: "Artifactory_API_Token Authorization_Bearer"
+```
+
+### Example 5: Supress output, result will be passed or failed without extra information
+```
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+          
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Secret Demo
+        uses: chiefus/secret_serfer@v0.1.0
+        with:
+          targets: "./"
+          args: "--no-entropy"
+          suppress_output: true
 ```
