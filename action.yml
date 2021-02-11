@@ -1,6 +1,8 @@
 name: 'Secret Serfer'
 author: Andrey Shelkov
 description: 'Looking for Secrets in current commit. It can create a report in JUnit Format.'
+icon: aperture
+color: red
 inputs:
   args:
     description: |
