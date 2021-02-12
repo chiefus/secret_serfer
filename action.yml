@@ -41,6 +41,21 @@ inputs:
     required: false
     default: false
 
+  skipped_paths:
+    description: |
+      Set list of paths' regex values, devided by space.
+      You can put it in quotation like this:
+        skipped_paths: "'static/images' 'static/css'"
+    required: false
+
+  skipped_strings:
+    description: |
+      Trufflehog3 uses regexp based rules. Sometimes they aren't perfect.
+      To get rid it you can declare list of stings which should be excluded from checks.
+      For example, some URIs can contain part which matches regexp of AWS Secret Token.
+      You can exclude this URI from analysis.
+    required: false
+
 runs:
   using: "docker"
   image: 'Dockerfile'
@@ -52,3 +67,5 @@ runs:
     REPORT: ${{ inputs.report }}
     EXCLUDE_RULES: ${{ inputs.exclude_rules }}
     SUPPRESS_OUTPUT: ${{ inputs.suppress_output }}
+    SKIPPED_PATHS: ${{ inputs.skipped_paths }}
+    SKIPPED_STRINGS: ${{ inputs.skipped_strings }}
